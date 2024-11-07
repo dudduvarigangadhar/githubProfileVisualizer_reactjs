@@ -1,0 +1,11 @@
+.noRepoFound {
+  height: 300px;
+}
+
+.loader-div-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
