@@ -8,6 +8,7 @@ import RepoItemDetails from './components/RepoItemDetails'
 import Repository from './components/Repository'
 import './App.css'
 import ProfileContext from './ProfileContext'
+import RepoItemDetailsContainer from './components/RepoItemDetailsContainer'
 
 const App = () => {
   const [username, setUsername] = useState('')
@@ -32,7 +33,7 @@ const App = () => {
         <Route
           exact
           path="/repositories/:repoName"
-          component={RepoItemDetails}
+          component={RepoItemDetailsContainer}
         />
         <Route exact path="/analysis" component={Analysis} />
         <Route exact path="/notfound" component={NotFound} />
