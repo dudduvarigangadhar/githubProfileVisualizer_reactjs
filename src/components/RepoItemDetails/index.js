@@ -196,7 +196,9 @@ class RepoItemDetails extends Component {
         </div>
         <div>
           <h1 className="contributors-heading">Contributors :</h1>
-          <p className="contributors-length">{contributorLength} Members</p>
+          <p className="contributors-length">
+            {contributorLength} {contributorLength === 1 ? 'Member' : 'Members'}
+          </p>
           <div>
             {contributors.map(eachContributor => (
               <Contributors
@@ -206,25 +208,36 @@ class RepoItemDetails extends Component {
             ))}
           </div>
         </div>
-        <div>
-          <h1 className="languages-heading">Languages :</h1>
+        <h1 className="languages-heading">Languages :</h1>
+        <div className="piechat-container">
           <PieChart languages={languages} />
         </div>
       </div>
     )
   }
 
+  onClickTryAgain = () => {
+    this.getRepoDetails()
+  }
+
   repoItemDetailsFailure = () => (
     <div className="repo-item-details-failure">
       <div className="repo-item-details-failure-inner-div">
         <img
-          className="noRepoFound"
-          src="https://res.cloudinary.com/diqwk5cdp/image/upload/v1730975419/Layer_3_unz7cw.png"
-          alt="notfound"
+          src="https://res.cloudinary.com/diqwk5cdp/image/upload/v1730787654/Frame_8830_uvuzht.png"
+          alt="failure view"
+          className="error-view"
         />
-        <h1 className="repo-item-details-failure-heading">
-          No Repositories Found
-        </h1>
+        <p className="failure-view-message">
+          Something went wrong. Please try again
+        </p>
+        <button
+          className="try-again-button"
+          type="button"
+          onClick={this.onClickTryAgain}
+        >
+          Try again
+        </button>
       </div>
     </div>
   )

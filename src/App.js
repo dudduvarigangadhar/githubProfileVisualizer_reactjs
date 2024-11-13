@@ -1,10 +1,10 @@
 import {Switch, Route, Redirect} from 'react-router-dom'
 import {useState} from 'react'
-import Analysis from './components/Analysis'
+import AnalysisContainer from './components/AnalysisContainer'
 // import Header from './components/Header'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
-import RepoItemDetails from './components/RepoItemDetails'
+
 import Repository from './components/Repository'
 import './App.css'
 import ProfileContext from './ProfileContext'
@@ -35,7 +35,7 @@ const App = () => {
           path="/repositories/:repoName"
           component={RepoItemDetailsContainer}
         />
-        <Route exact path="/analysis" component={Analysis} />
+        <Route exact path="/analysis" component={AnalysisContainer} />
         <Route exact path="/notfound" component={NotFound} />
         <Redirect to="/notfound" />
       </Switch>
